@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhinaya Boutique & Tailoring | MS Nagar, Bengaluru</title>
+<title>Abhinaya Fashion & Beauty Studio | MS Nagar, Bengaluru</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -248,17 +248,58 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   .wa-float span:not(.wa-dot){display:none}
   .wa-float{border-radius:50%;padding:0.88rem}
 }
+
+/* ── GALLERY ── */
+.gallery{background:var(--white)}
+.gallery-filter{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem;margin-bottom:2.5rem}
+.gf-btn{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:0.45rem 1.1rem;border-radius:2rem;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:'Outfit',sans-serif}
+.gf-btn:hover,.gf-btn.active{background:var(--rose);color:var(--white);border-color:var(--rose)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.gal-item{border-radius:1rem;overflow:hidden;position:relative;cursor:pointer;background:var(--cream);border:1px solid var(--border);transition:transform 0.3s,box-shadow 0.3s;aspect-ratio:1}
+.gal-item:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(181,41,94,0.15)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
+.gal-item:hover img{transform:scale(1.05)}
+.gal-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;background:var(--rose-light)}
+.gal-placeholder-icon{font-size:2rem;opacity:0.4}
+.gal-placeholder-text{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--rose);opacity:0.6}
+.gal-overlay{position:absolute;inset:0;background:rgba(139,26,74,0);display:flex;align-items:flex-end;padding:1rem;transition:background 0.3s}
+.gal-item:hover .gal-overlay{background:rgba(139,26,74,0.45)}
+.gal-caption{font-size:0.75rem;font-weight:600;color:#fff;letter-spacing:0.1em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:all 0.3s}
+.gal-item:hover .gal-caption{opacity:1;transform:translateY(0)}
+.gal-cat-badge{position:absolute;top:0.7rem;left:0.7rem;font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;background:var(--rose);color:#fff;padding:0.22rem 0.65rem;border-radius:1rem}
+/* lightbox */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(28,15,15,0.92);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.open{display:flex}
+.lb-inner{position:relative;max-width:860px;width:100%;max-height:90vh}
+.lb-inner img{width:100%;max-height:85vh;object-fit:contain;border-radius:0.8rem}
+.lb-close{position:absolute;top:-1.5rem;right:-1.5rem;width:36px;height:36px;border-radius:50%;background:var(--rose);color:#fff;border:none;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif}
+.lb-caption{text-align:center;color:rgba(255,255,255,0.7);font-size:0.82rem;margin-top:0.8rem;letter-spacing:0.08em}
+/* gallery upload tip box */
+.gallery-tip{background:var(--rose-light);border:1.5px dashed rgba(181,41,94,0.3);border-radius:1rem;padding:1.4rem 1.8rem;margin-top:2rem;display:flex;align-items:flex-start;gap:1rem}
+.tip-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.tip-title{font-size:0.82rem;font-weight:600;color:var(--rose);margin-bottom:0.3rem}
+.tip-text{font-size:0.78rem;color:var(--muted);line-height:1.7;font-weight:300}
+.tip-text code{background:rgba(181,41,94,0.1);color:var(--rose);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.76rem;font-family:monospace}
+
+@media(max-width:768px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gal-item{aspect-ratio:1}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">Abhinaya Boutique<span class="logo-sub">& Tailoring — MS Nagar, Bengaluru</span></a>
+  <a href="#" class="logo">Abhinaya Fashion & Beauty Studio<span class="logo-sub">Fashion · Beauty · Jewellery · Mehndi</span></a>
   <ul class="nav-links">
     <li><a href="#collections">Collections</a></li>
     <li><a href="#jewellery">Jewellery</a></li>
     <li><a href="#beauty">Beauty & Mehndi</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://wa.me/917338148555" class="nav-cta" target="_blank">Order Now</a></li>
@@ -270,8 +311,8 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
 <section class="hero" id="home">
   <div class="hero-left">
     <span class="badge">New Collection 2025</span>
-    <h1>Fashion, <em>Jewellery</em> & Beauty — All in One Place</h1>
-    <p class="hero-desc">Abhinaya Boutique brings you ladies & kids fashion, handcrafted bangles, custom jewellery, and full beauty services for every family occasion — right in MS Nagar, Bengaluru.</p>
+    <h1>Tailoring · Fashion · Jewellery · Beauty — <em>All in One Place</em></h1>
+    <p class="hero-desc">Abhinaya Fashion & Beauty Studio brings you ladies & kids fashion, handcrafted bangles, custom jewellery, and full beauty services for every family occasion — right in MS Nagar, Bengaluru.</p>
     <div class="btn-row">
       <a href="#collections" class="btn-primary">Explore Collections</a>
       <a href="#contact" class="btn-ghost">Visit Our Shop</a>
@@ -501,6 +542,161 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="col-head">
+    <div>
+      <div class="sec-tag">Our Gallery</div>
+      <h2 class="sec-title">Our Work & Collections</h2>
+      <p class="sec-desc">A glimpse of our dresses, jewellery, tailoring work and mehndi designs. Add your own photos by replacing the placeholders below.</p>
+    </div>
+  </div>
+
+  <!-- FILTER BUTTONS -->
+  <div class="gallery-filter">
+    <button class="gf-btn active" onclick="filterGallery('all',this)">All</button>
+    <button class="gf-btn" onclick="filterGallery('tailoring',this)">Tailoring</button>
+    <button class="gf-btn" onclick="filterGallery('ladies',this)">Ladies Fashion</button>
+    <button class="gf-btn" onclick="filterGallery('kids',this)">Kids Fashion</button>
+    <button class="gf-btn" onclick="filterGallery('jewellery',this)">Jewellery & Bangles</button>
+    <button class="gf-btn" onclick="filterGallery('beauty',this)">Beauty & Mehndi</button>
+  </div>
+
+  <!-- GALLERY GRID -->
+  <!-- HOW TO ADD YOUR PHOTO:
+       Replace the <div class="gal-placeholder">...</div> inside any .gal-item
+       with: <img src="YOUR-PHOTO-FILENAME.jpg" alt="description">
+       Example: <img src="dress1.jpg" alt="Pink kurti"> -->
+  <div class="gallery-grid">
+
+    <!-- ITEM 1 — Tailoring -->
+    <div class="gal-item reveal" data-cat="tailoring" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">✂</div>
+        <div class="gal-placeholder-text">Add Tailoring Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="tailoring1.jpg" alt="Custom stitching"> -->
+      <div class="gal-overlay"><span class="gal-caption">Custom Stitching</span></div>
+      <span class="gal-cat-badge">Tailoring</span>
+    </div>
+
+    <!-- ITEM 2 — Ladies Fashion -->
+    <div class="gal-item reveal d1" data-cat="ladies" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">👗</div>
+        <div class="gal-placeholder-text">Add Ladies Fashion Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="ladies1.jpg" alt="Kurti collection"> -->
+      <div class="gal-overlay"><span class="gal-caption">Ladies Collection</span></div>
+      <span class="gal-cat-badge">Ladies Fashion</span>
+    </div>
+
+    <!-- ITEM 3 — Kids Fashion -->
+    <div class="gal-item reveal d2" data-cat="kids" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">🎀</div>
+        <div class="gal-placeholder-text">Add Kids Fashion Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="kids1.jpg" alt="Kids frocks"> -->
+      <div class="gal-overlay"><span class="gal-caption">Kids Collection</span></div>
+      <span class="gal-cat-badge">Kids Fashion</span>
+    </div>
+
+    <!-- ITEM 4 — Jewellery -->
+    <div class="gal-item reveal" data-cat="jewellery" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">💍</div>
+        <div class="gal-placeholder-text">Add Bangles / Jewellery Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="bangles1.jpg" alt="Bangle collection"> -->
+      <div class="gal-overlay"><span class="gal-caption">Bangles & Jewellery</span></div>
+      <span class="gal-cat-badge">Jewellery</span>
+    </div>
+
+    <!-- ITEM 5 — Mehndi -->
+    <div class="gal-item reveal d1" data-cat="beauty" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">🌸</div>
+        <div class="gal-placeholder-text">Add Mehndi / Beauty Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="mehndi1.jpg" alt="Bridal mehndi"> -->
+      <div class="gal-overlay"><span class="gal-caption">Bridal Mehndi</span></div>
+      <span class="gal-cat-badge">Mehndi</span>
+    </div>
+
+    <!-- ITEM 6 — Tailoring -->
+    <div class="gal-item reveal d2" data-cat="tailoring" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">🧵</div>
+        <div class="gal-placeholder-text">Add Tailoring Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="tailoring2.jpg" alt="Finished dress"> -->
+      <div class="gal-overlay"><span class="gal-caption">Finished Dress</span></div>
+      <span class="gal-cat-badge">Tailoring</span>
+    </div>
+
+    <!-- ITEM 7 — Ladies Fashion -->
+    <div class="gal-item reveal" data-cat="ladies" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">👘</div>
+        <div class="gal-placeholder-text">Add Saree / Ethnic Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="ladies2.jpg" alt="Saree collection"> -->
+      <div class="gal-overlay"><span class="gal-caption">Ethnic Wear</span></div>
+      <span class="gal-cat-badge">Ladies Fashion</span>
+    </div>
+
+    <!-- ITEM 8 — Jewellery -->
+    <div class="gal-item reveal d1" data-cat="jewellery" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">📿</div>
+        <div class="gal-placeholder-text">Add Necklace Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="necklace1.jpg" alt="Necklace set"> -->
+      <div class="gal-overlay"><span class="gal-caption">Necklace Sets</span></div>
+      <span class="gal-cat-badge">Jewellery</span>
+    </div>
+
+    <!-- ITEM 9 — Kids -->
+    <div class="gal-item reveal d2" data-cat="kids" onclick="openLightbox(this)">
+      <div class="gal-placeholder">
+        <div class="gal-placeholder-icon">🎒</div>
+        <div class="gal-placeholder-text">Add Kids Party Wear Photo</div>
+      </div>
+      <!-- Replace above div with: <img src="kids2.jpg" alt="Kids party wear"> -->
+      <div class="gal-overlay"><span class="gal-caption">Kids Party Wear</span></div>
+      <span class="gal-cat-badge">Kids Fashion</span>
+    </div>
+
+  </div>
+
+  <!-- HOW TO ADD PHOTOS — TIP BOX -->
+  <div class="gallery-tip">
+    <div class="tip-icon">📸</div>
+    <div>
+      <div class="tip-title">How to Add Your Real Photos</div>
+      <div class="tip-text">
+        1. Take photos of your products, dresses, jewellery and mehndi work on your phone.<br>
+        2. Save the photos in the same folder as this <code>index.html</code> file.<br>
+        3. Open <code>index.html</code> in Notepad or any text editor.<br>
+        4. Find the comment that says <code>&lt;!-- Replace above div with... --&gt;</code><br>
+        5. Delete the <code>&lt;div class="gal-placeholder"&gt;...&lt;/div&gt;</code> above it.<br>
+        6. Paste: <code>&lt;img src="your-photo-name.jpg" alt="description"&gt;</code><br>
+        7. Save the file and refresh your browser. Your photo will appear instantly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLightbox()">&#10005;</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
@@ -537,7 +733,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
         <div class="c-row"><span class="c-key">Phone</span><span class="c-val"><a href="tel:+917338148555">+91 73381 48555</a></span></div>
         <div class="c-row"><span class="c-key">WhatsApp</span><span class="c-val"><a href="https://wa.me/917338148555" target="_blank">+91 73381 48555</a></span></div>
         <div class="c-row"><span class="c-key">Hours</span><span class="c-val">Mon – Sat: 10:00 AM – 8:00 PM<br>Sunday: 11:00 AM – 6:00 PM</span></div>
-        <div class="c-row"><span class="c-key">Social</span><span class="c-val">@AbhinayaBoutique<br><span style="font-size:0.75rem;color:var(--muted)">Facebook & Instagram — Coming Soon</span></span></div>
+        <div class="c-row"><span class="c-key">Social</span><span class="c-val">@AbhinayaStudio<br><span style="font-size:0.75rem;color:var(--muted)">Facebook & Instagram — Coming Soon</span></span></div>
       </div>
     </div>
     <div class="reveal d1">
@@ -579,12 +775,12 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
     <div class="m-block"><span class="m-key">PIN Code</span><span class="m-val">560033</span></div>
     <div class="m-block"><span class="m-key">Phone</span><span class="m-val">+91 73381 48555</span></div>
   </div>
-  <a href="https://maps.google.com/?q=Abhinaya+Boutique+%26+Tailoring+3+Grapes+Garden+Gajendra+Main+Road+Old+Baiyapanahalli+MS+Nagar+Bengaluru+560033" target="_blank" class="btn-primary">Open in Google Maps</a>
+  <a href="https://maps.google.com/?q=Abhinaya+Fashion+%26+Beauty+Studio+3+Grapes+Garden+Gajendra+Main+Road+Old+Baiyapanahalli+MS+Nagar+Bengaluru+560033" target="_blank" class="btn-primary">Open in Google Maps</a>
 </div>
 
 <!-- SOCIAL -->
 <div class="social-strip">
-  <h2>Follow Abhinaya Boutique</h2>
+  <h2>Follow Us on Social Media</h2>
   <p>New arrivals, mehndi designs, jewellery drops and special offers — coming soon on Facebook & Instagram</p>
   <div class="s-links">
     <a href="#" class="s-btn">Facebook</a>
@@ -596,7 +792,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
 <!-- FOOTER -->
 <footer>
   <div class="f-brand">
-    <a href="#" class="f-logo">Abhinaya <span>Boutique</span></a>
+    <a href="#" class="f-logo">Abhinaya <span>Fashion & Beauty Studio</span></a>
     <p>Your complete neighbourhood destination for fashion, jewellery, tailoring and beauty services in MS Nagar, Bengaluru.</p>
   </div>
   <div class="f-col">
@@ -614,6 +810,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       <li><a href="#jewellery">Bangles</a></li>
       <li><a href="#jewellery">Custom Bangles</a></li>
       <li><a href="#jewellery">Necklaces</a></li>
+      <li><a href="#gallery">Photo Gallery</a></li>
       <li><a href="#beauty">Mehndi Services</a></li>
       <li><a href="#beauty">Beauty & Makeup</a></li>
     </ul>
@@ -623,13 +820,13 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
     <ul>
       <li><a href="tel:+917338148555">+91 73381 48555</a></li>
       <li><a href="https://wa.me/917338148555" target="_blank">WhatsApp</a></li>
-      <li><a href="https://maps.google.com/?q=Abhinaya+Boutique+MS+Nagar+Bengaluru+560033" target="_blank">Google Maps</a></li>
+      <li><a href="https://maps.google.com/?q=Abhinaya+Fashion+Beauty+Studio+MS+Nagar+Bengaluru+560033" target="_blank">Google Maps</a></li>
       <li><a href="#contact">Send Enquiry</a></li>
     </ul>
   </div>
 </footer>
 <div class="footer-bottom">
-  <span>© 2025 Abhinaya Boutique & Tailoring, Bengaluru. All rights reserved.</span>
+  <span>© 2025 Abhinaya Fashion & Beauty Studio, Bengaluru. All rights reserved.</span>
   <span>MS Nagar, Bengaluru — 560033</span>
 </div>
 
@@ -652,8 +849,39 @@ function sendWA() {
   const p = document.getElementById('f-phone').value;
   const i = document.getElementById('f-int').value;
   const m = document.getElementById('f-msg').value || '';
-  window.open('https://wa.me/917338148555?text=' + encodeURIComponent(`Hello Abhinaya Boutique! I am ${n}${p?' ('+p+')':''}, interested in: ${i}. ${m}`.trim()), '_blank');
+  window.open('https://wa.me/917338148555?text=' + encodeURIComponent(`Hello Abhinaya Fashion & Beauty Studio! I am ${n}${p?' ('+p+')':''}, interested in: ${i}. ${m}`.trim()), '_blank');
 }
+
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gal-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function openLightbox(item) {
+  const img = item.querySelector('img');
+  if (!img) return; // no real photo yet — placeholder only
+  const caption = item.querySelector('.gal-caption');
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-caption').textContent = caption ? caption.textContent : '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target: document.getElementById('lightbox')}); });
 </script>
 </body>
 </html>
