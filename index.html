@@ -63,6 +63,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hcard-label{padding:0.7rem 1rem;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)}
 .hbadge{position:absolute;top:0.7rem;right:0.7rem;background:var(--rose);color:var(--white);font-size:0.6rem;font-weight:600;padding:0.22rem 0.6rem;border-radius:1rem;letter-spacing:0.08em;text-transform:uppercase}
 .ph-icon{font-family:'Cormorant Garant',serif;font-size:3rem;color:rgba(181,41,94,0.15);font-weight:600}
+/* Real photo support inside hero cards */
+.hcard-img img{width:100%;height:100%;object-fit:cover;display:block}
+.hcard-img.has-photo{background:none}
+.hcard-img.has-photo .ph-icon{display:none}
+/* Real photo support inside collection cards */
+.col-img img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0}
+.col-img.has-photo .ph-icon{display:none}
 
 /* TICKER */
 .ticker{background:var(--rose);color:var(--white);padding:0.68rem 0;overflow:hidden;white-space:nowrap}
@@ -320,15 +327,15 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   </div>
   <div class="hero-right">
     <div class="hcard tall">
-      <div class="hcard-img ladies"><span class="ph-icon">AB</span><span class="hbadge">New</span></div>
+      <div class="hcard-img ladies has-photo"><img src="ladies-collection-2.png" alt="Pink embroidered kurta with dupatta — Ladies Collection at Abhinaya Fashion Studio MS Nagar Bengaluru" loading="lazy"><span class="hbadge">New</span></div>
       <div class="hcard-label">Ladies Collection</div>
     </div>
     <div class="hcard">
-      <div class="hcard-img kids"><span class="ph-icon">Kids</span><span class="hbadge">Trending</span></div>
+      <div class="hcard-img kids has-photo"><img src="kids-fashion-girl.png" alt="Young girl in colourful traditional Indian dress — Kids Wear at Abhinaya Fashion Studio" loading="lazy"><span class="hbadge">Trending</span></div>
       <div class="hcard-label">Kids Wear</div>
     </div>
     <div class="hcard">
-      <div class="hcard-img jewel"><span class="ph-icon">Jewel</span></div>
+      <div class="hcard-img jewel has-photo"><img src="bangles-stack.png" alt="Stack of colourful glass bangles — Bangles & Jewellery collection at Abhinaya Studio" loading="lazy"></div>
       <div class="hcard-label">Bangles & More</div>
     </div>
   </div>
@@ -358,7 +365,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   </div>
   <div class="col-grid">
     <div class="col-card reveal">
-      <div class="col-img ci1"><span class="ph-icon">Ladies</span><span class="price-pill">From Rs. 499</span></div>
+      <div class="col-img ci1 has-photo"><img src="ethnic-western-flatlay.png" alt="Pink ethnic kurta sets, sarees and accessories flatlay — Ethnic and Western Wear" loading="lazy"><span class="price-pill">From Rs. 499</span></div>
       <div class="col-body">
         <div class="col-cat">Ladies Fashion</div>
         <div class="col-name">Ethnic & Western Wear</div>
@@ -367,7 +374,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d1">
-      <div class="col-img ci2"><span class="ph-icon">Kids</span><span class="price-pill">From Rs. 299</span></div>
+      <div class="col-img ci2 has-photo"><img src="girls-dresses-collection.png" alt="Colourful girls dresses, lehengas and frocks collection" loading="lazy"><span class="price-pill">From Rs. 299</span></div>
       <div class="col-body">
         <div class="col-cat">Kids Fashion</div>
         <div class="col-name">Girls & Boys Dresses</div>
@@ -376,7 +383,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d2">
-      <div class="col-img ci3"><span class="ph-icon">Stitch</span><span class="price-pill">Custom</span></div>
+      <div class="col-img ci3 has-photo"><img src="tailoring-stitching-1.png" alt="Tailor stitching a green saree on sewing machine — Custom Stitching at Abhinaya Studio MS Nagar" loading="lazy"><span class="price-pill">Custom</span></div>
       <div class="col-body">
         <div class="col-cat">Tailoring</div>
         <div class="col-name">Custom Stitching & Alterations</div>
@@ -395,7 +402,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   </div>
   <div class="col-grid">
     <div class="col-card reveal">
-      <div class="col-img ci3"><span class="ph-icon">Bangles</span><span class="price-pill">From Rs. 199</span></div>
+      <div class="col-img ci3 has-photo"><img src="bangles-stack.png" alt="Tall stack of multicoloured glass bangles with gold beadwork — Regular Bangles" loading="lazy"><span class="price-pill">From Rs. 199</span></div>
       <div class="col-body">
         <div class="col-cat">Bangles</div>
         <div class="col-name">Regular Bangles</div>
@@ -404,8 +411,9 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d1">
-      <div class="col-img" style="background:linear-gradient(145deg,#FFECB3,#FFD54F);height:260px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative">
-        <span class="ph-icon">Custom</span><span class="price-pill">Custom</span>
+      <div class="col-img has-photo" style="height:260px;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+        <img src="custom-bangles-purple.jpg" alt="Purple silk thread bangles with gold kundan work — Personalised and Designer Bangles" loading="lazy">
+        <span class="price-pill">Custom</span>
       </div>
       <div class="col-body">
         <div class="col-cat">Customised Bangles</div>
@@ -415,7 +423,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d2">
-      <div class="col-img ci5"><span class="ph-icon">Neck</span><span class="price-pill">From Rs. 349</span></div>
+      <div class="col-img ci5 has-photo"><img src="necklace-pink.png" alt="Pink and gold kundan necklace set with matching jhumka earrings — Necklaces and Jewellery Sets" loading="lazy"><span class="price-pill">From Rs. 349</span></div>
       <div class="col-body">
         <div class="col-cat">Necklaces & Chains</div>
         <div class="col-name">Neck Brands & Sets</div>
@@ -424,7 +432,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal">
-      <div class="col-img ci4"><span class="ph-icon">Earrings</span><span class="price-pill">From Rs. 99</span></div>
+      <div class="col-img ci4 has-photo"><img src="earrings-jhumkas.png" alt="Pair of gold jhumka earrings with red and green stones — Earrings" loading="lazy"><span class="price-pill">From Rs. 99</span></div>
       <div class="col-body">
         <div class="col-cat">Earrings</div>
         <div class="col-name">Jhumkas, Studs & Drops</div>
@@ -433,7 +441,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d1">
-      <div class="col-img ci6"><span class="ph-icon">Hair</span><span class="price-pill">From Rs. 49</span></div>
+      <div class="col-img ci6 has-photo"><img src="hair-accessories.png" alt="Pink scrunchies, gold hair clips, pins and bands — Hair Accessories" loading="lazy"><span class="price-pill">From Rs. 49</span></div>
       <div class="col-body">
         <div class="col-cat">Hair Accessories</div>
         <div class="col-name">Clips, Bands & Hair Pins</div>
@@ -442,8 +450,9 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
       </div>
     </div>
     <div class="col-card reveal d2">
-      <div class="col-img" style="background:linear-gradient(145deg,#FCE4EC,#F8BBD0);height:260px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border);position:relative">
-        <span class="ph-icon">More</span><span class="price-pill">Various</span>
+      <div class="col-img has-photo" style="height:260px;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+        <img src="bags-belts-daily-wear.png" alt="Pink leather handbag, belt and gold jewellery on marble — Bags, Belts and Daily Wear accessories" loading="lazy">
+        <span class="price-pill">Various</span>
       </div>
       <div class="col-body">
         <div class="col-cat">Other Accessories</div>
@@ -548,7 +557,7 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
     <div>
       <div class="sec-tag">Our Gallery</div>
       <h2 class="sec-title">Our Work & Collections</h2>
-      <p class="sec-desc">A glimpse of our dresses, jewellery, tailoring work and mehndi designs. Add your own photos by replacing the placeholders below.</p>
+      <p class="sec-desc">A glimpse of our dresses, jewellery, tailoring work and mehndi designs. Tap any photo to view it larger.</p>
     </div>
   </div>
 
@@ -563,128 +572,85 @@ footer{background:#140808;color:rgba(255,255,255,0.4);display:grid;grid-template
   </div>
 
   <!-- GALLERY GRID -->
-  <!-- HOW TO ADD YOUR PHOTO:
-       Replace the <div class="gal-placeholder">...</div> inside any .gal-item
-       with: <img src="YOUR-PHOTO-FILENAME.jpg" alt="description">
-       Example: <img src="dress1.jpg" alt="Pink kurti"> -->
   <div class="gallery-grid">
 
     <!-- ITEM 1 — Tailoring -->
     <div class="gal-item reveal" data-cat="tailoring" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">✂</div>
-        <div class="gal-placeholder-text">Add Tailoring Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="tailoring1.jpg" alt="Custom stitching"> -->
+      <img src="tailoring-alterations.png" alt="Tailor stitching turquoise and gold embroidered fabric on JUKI machine — Custom Stitching">
       <div class="gal-overlay"><span class="gal-caption">Custom Stitching</span></div>
       <span class="gal-cat-badge">Tailoring</span>
     </div>
 
     <!-- ITEM 2 — Ladies Fashion -->
     <div class="gal-item reveal d1" data-cat="ladies" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">👗</div>
-        <div class="gal-placeholder-text">Add Ladies Fashion Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="ladies1.jpg" alt="Kurti collection"> -->
-      <div class="gal-overlay"><span class="gal-caption">Ladies Collection</span></div>
+      <img src="ethnic-sarees-mannequin.png" alt="Three mannequins in pink, gold and red bridal sarees — Ladies Ethnic Wear">
+      <div class="gal-overlay"><span class="gal-caption">Bridal & Festive Sarees</span></div>
       <span class="gal-cat-badge">Ladies Fashion</span>
     </div>
 
     <!-- ITEM 3 — Kids Fashion -->
     <div class="gal-item reveal d2" data-cat="kids" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">🎀</div>
-        <div class="gal-placeholder-text">Add Kids Fashion Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="kids1.jpg" alt="Kids frocks"> -->
-      <div class="gal-overlay"><span class="gal-caption">Kids Collection</span></div>
+      <img src="kids-wear-girl.png" alt="Young girl in traditional teal pavadai with maroon blouse — Kids Fashion">
+      <div class="gal-overlay"><span class="gal-caption">Pavadai & Traditional Wear</span></div>
       <span class="gal-cat-badge">Kids Fashion</span>
     </div>
 
     <!-- ITEM 4 — Jewellery -->
     <div class="gal-item reveal" data-cat="jewellery" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">💍</div>
-        <div class="gal-placeholder-text">Add Bangles / Jewellery Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="bangles1.jpg" alt="Bangle collection"> -->
-      <div class="gal-overlay"><span class="gal-caption">Bangles & Jewellery</span></div>
+      <img src="necklace-green.png" alt="Green emerald and gold kundan necklace set with matching jhumka earrings on black velvet — Bridal Jewellery">
+      <div class="gal-overlay"><span class="gal-caption">Bridal Necklace Sets</span></div>
       <span class="gal-cat-badge">Jewellery</span>
     </div>
 
     <!-- ITEM 5 — Mehndi -->
     <div class="gal-item reveal d1" data-cat="beauty" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">🌸</div>
-        <div class="gal-placeholder-text">Add Mehndi / Beauty Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="mehndi1.jpg" alt="Bridal mehndi"> -->
+      <img src="mehndi-bridal-1.png" alt="Intricate bridal mehndi on hands with gold bangles and red lehenga — Bridal Mehndi service">
       <div class="gal-overlay"><span class="gal-caption">Bridal Mehndi</span></div>
       <span class="gal-cat-badge">Mehndi</span>
     </div>
 
     <!-- ITEM 6 — Tailoring -->
     <div class="gal-item reveal d2" data-cat="tailoring" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">🧵</div>
-        <div class="gal-placeholder-text">Add Tailoring Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="tailoring2.jpg" alt="Finished dress"> -->
-      <div class="gal-overlay"><span class="gal-caption">Finished Dress</span></div>
+      <img src="tailoring-finished-dress.png" alt="Red anarkali gown with gold zari embroidery hanging on hanger — Finished Dress from in-house tailoring">
+      <div class="gal-overlay"><span class="gal-caption">Finished Anarkali</span></div>
       <span class="gal-cat-badge">Tailoring</span>
     </div>
 
     <!-- ITEM 7 — Ladies Fashion -->
     <div class="gal-item reveal" data-cat="ladies" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">👘</div>
-        <div class="gal-placeholder-text">Add Saree / Ethnic Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="ladies2.jpg" alt="Saree collection"> -->
-      <div class="gal-overlay"><span class="gal-caption">Ethnic Wear</span></div>
+      <img src="ladies-collection-1.png" alt="Lady wearing pink chudidar kurta with golden embroidery and dupatta — Ladies Ethnic Wear">
+      <div class="gal-overlay"><span class="gal-caption">Chudidar & Kurta Sets</span></div>
       <span class="gal-cat-badge">Ladies Fashion</span>
     </div>
 
-    <!-- ITEM 8 — Jewellery -->
-    <div class="gal-item reveal d1" data-cat="jewellery" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">📿</div>
-        <div class="gal-placeholder-text">Add Necklace Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="necklace1.jpg" alt="Necklace set"> -->
-      <div class="gal-overlay"><span class="gal-caption">Necklace Sets</span></div>
-      <span class="gal-cat-badge">Jewellery</span>
+    <!-- ITEM 8 — Mehndi Designs -->
+    <div class="gal-item reveal d1" data-cat="beauty" onclick="openLightbox(this)">
+      <img src="mehndi-bridal-2.png" alt="Collage of intricate mehndi designs including floral and traditional patterns">
+      <div class="gal-overlay"><span class="gal-caption">Mehndi Design Gallery</span></div>
+      <span class="gal-cat-badge">Mehndi</span>
     </div>
 
-    <!-- ITEM 9 — Kids -->
+    <!-- ITEM 9 — Kids Party Wear -->
     <div class="gal-item reveal d2" data-cat="kids" onclick="openLightbox(this)">
-      <div class="gal-placeholder">
-        <div class="gal-placeholder-icon">🎒</div>
-        <div class="gal-placeholder-text">Add Kids Party Wear Photo</div>
-      </div>
-      <!-- Replace above div with: <img src="kids2.jpg" alt="Kids party wear"> -->
+      <img src="kids-party-wear.png" alt="Young girl in pink and orange embroidered lehenga at a party — Kids Party Wear">
       <div class="gal-overlay"><span class="gal-caption">Kids Party Wear</span></div>
       <span class="gal-cat-badge">Kids Fashion</span>
     </div>
 
-  </div>
-
-  <!-- HOW TO ADD PHOTOS — TIP BOX -->
-  <div class="gallery-tip">
-    <div class="tip-icon">📸</div>
-    <div>
-      <div class="tip-title">How to Add Your Real Photos</div>
-      <div class="tip-text">
-        1. Take photos of your products, dresses, jewellery and mehndi work on your phone.<br>
-        2. Save the photos in the same folder as this <code>index.html</code> file.<br>
-        3. Open <code>index.html</code> in Notepad or any text editor.<br>
-        4. Find the comment that says <code>&lt;!-- Replace above div with... --&gt;</code><br>
-        5. Delete the <code>&lt;div class="gal-placeholder"&gt;...&lt;/div&gt;</code> above it.<br>
-        6. Paste: <code>&lt;img src="your-photo-name.jpg" alt="description"&gt;</code><br>
-        7. Save the file and refresh your browser. Your photo will appear instantly.
-      </div>
+    <!-- ITEM 10 — Bangles -->
+    <div class="gal-item reveal" data-cat="jewellery" onclick="openLightbox(this)">
+      <img src="bangles-pile.png" alt="Pile of colourful glass bangles in red, green, blue, gold and orange on wooden surface — Bangle collection">
+      <div class="gal-overlay"><span class="gal-caption">Bangle Collection</span></div>
+      <span class="gal-cat-badge">Bangles</span>
     </div>
+
+    <!-- ITEM 11 — Boys Ethnic -->
+    <div class="gal-item reveal d1" data-cat="kids" onclick="openLightbox(this)">
+      <img src="boys-dresses-collection.png" alt="Collection of boys ethnic kurtas, sherwanis and turbans in green, maroon, blue, yellow and cream">
+      <div class="gal-overlay"><span class="gal-caption">Boys Ethnic Wear</span></div>
+      <span class="gal-cat-badge">Kids Fashion</span>
+    </div>
+
   </div>
 </section>
 
